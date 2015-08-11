@@ -5,23 +5,19 @@
 <title>Sienar Fleet Systems - Star Wars X-Wing Compare</title>
 </head>
 <body>
-<form action="sienarfleetsys/compareShip/?ship1=&ship2=" method="post">{% csrf_token %}
-<input list="ships" name="ship1">
-<datalist id="ship1">
+<form action="sienarfleetsys/compareShip/" method="post">{% csrf_token %}
+<select name="ship1">
 {% for obj in object_list %}
-	<option value="{{ obj.nome }}">{{ obj }}</option>
+	<option value="{{ obj.nome }}">{{ obj.nome }}</option>
 {% endfor %}
-</datalist>
-
+</select>
 <br>
 <hr>
-
-<input list="ships" name="ship2">
-<datalist id="ship2">
+<select name="ship2">
 {% for obj in object_list %}
-	<option value="{{ obj.nome }}">{{ obj }}</option>
+	<option value="{{ obj.nome }}">{{ obj.nome }}</option>
 {% endfor %}
-</datalist>
+</select>
 <br>
 <br>
 <input type="submit">

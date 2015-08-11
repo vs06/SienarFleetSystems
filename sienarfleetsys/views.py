@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 from django import forms
 
 # Create your views here.
-class ShipsList(TemplateView):
+class ShipsList(ListView):
     model = Ship
     template_name = 'ships_list.html'
     
